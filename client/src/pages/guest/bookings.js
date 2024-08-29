@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import assets from "../../assets/assets";
+// import { useNavigate } from "react-router-dom";
+// import assets from "../../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuth } from "../../context/authContext";
 import { bookingHistory } from "../../redux/features/actions/guestActions";
@@ -12,7 +12,7 @@ import Footer from "../../components/global/Footer";
 import Preloader from "../Preloader";
 
 const Bookings = () => {
-  const Navigate = useNavigate();
+  // const Navigate = useNavigate();
   const dispatch = useDispatch();
   const [historyData, setHistoryData] = useState(null);
   const { userData } = useAuth();
@@ -29,7 +29,7 @@ const Bookings = () => {
 
   useEffect(() => {
     if (userData) dispatch(bookingHistory(userData?._id));
-  }, [userData]);
+  }, [userData,dispatch]);
 
   const checkCurrent = (toDate) => {
     const today = new Date();
@@ -47,7 +47,7 @@ const Bookings = () => {
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, [popUpRef]);
+  }, [popUpRef,dispatch,userId]);
 
   useEffect(() => {
     if (history) {

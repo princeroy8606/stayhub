@@ -1,5 +1,5 @@
 import { successPaymentRes } from "../api/api";
-import { bookingPaymentSuccess } from "../redux/features/actions/guestActions";
+// import { bookingPaymentSuccess } from "../redux/features/actions/guestActions";
 
 export const PaymentLaunch = (order) => {
   console.log(order.notes.u_id)

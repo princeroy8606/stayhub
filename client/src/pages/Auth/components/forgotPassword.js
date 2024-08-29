@@ -60,7 +60,7 @@ const ForgotPassword = ({ handleFunction, UserType }) => {
     }
 
     console.log(passwordStatus);
-  }, [isOtpSent, isOtpCorrect, passwordStatus]);
+  }, [isOtpSent, isOtpCorrect, passwordStatus,index,handleFunction,]);
 
   const handleClick = () => {
     if (index === 0) {
@@ -136,6 +136,9 @@ const ForgotPassword = ({ handleFunction, UserType }) => {
             </div>
           </div>
         );
+        default:
+          console.warn(`Unexpected index: ${index}`);
+          break;
     }
   };
 

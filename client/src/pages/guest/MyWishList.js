@@ -17,7 +17,7 @@ const MyWishList = () => {
   useEffect(() => {
     console.log(userData);
     if (!likedHouses && userData) dispatch(WishList(userData?._id));
-  }, [likedHouses, userData]);
+  }, [likedHouses, userData, dispatch]);
 
   return (
     <>

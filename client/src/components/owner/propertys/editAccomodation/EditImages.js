@@ -66,13 +66,13 @@ const EditImages = ({ data, handleCancel }) => {
         <p>Upload new Photos </p>
         <div className="add-photo-btn edit-photo-btn">
           {images?.length !== 0 ? (
-            <img
+            <img alt=""
               src={URL.createObjectURL(images[0])}
               className="add-photo-btn"
               onMouseOver={() => setAcitiveInput(true)}
             />
           ) : (
-            <img
+            <img alt=""
               src={`${process.env.REACT_APP_BASEURL}${data?.images[0]?.url}`}
               className="add-photo-btn edit-img"
               onMouseOver={() => setAcitiveInput(true)}
@@ -91,9 +91,8 @@ const EditImages = ({ data, handleCancel }) => {
                 onChange={(e) => handleChange(e, 0)}
                 multiple={true}
               />
-              <img
+              <img alt=""
                 src="https://www.svgrepo.com/show/158332/photos-selection.svg"
-                alt="image"
                 className="upload-image-icon"
               />
               <h3>Select New Image</h3>
@@ -103,13 +102,13 @@ const EditImages = ({ data, handleCancel }) => {
         <div className="display-images-cnt">
           <div className=" add-photo-btn edit-img-display flex-btn">
             {images?.length < 3 ? (
-              <img
+              <img alt=""
                 src={`${process.env.REACT_APP_BASEURL}${data?.images[1]?.url}`}
                 className="add-photo-btn edit-img"
                 onMouseOver={() => setAcitiveInput(true)}
               />
             ) : (
-              <img
+              <img alt=""
                 src={URL.createObjectURL(images[1])}
                 className="add-photo-btn"
                 onMouseOver={() => setAcitiveInput(true)}
@@ -128,9 +127,8 @@ const EditImages = ({ data, handleCancel }) => {
                   onChange={(e) => handleChange(e, 1)}
                   multiple={true}
                 />
-                <img
+                <img alt=""
                   src="https://www.svgrepo.com/show/158332/photos-selection.svg"
-                  alt="image"
                   className="upload-image-icon"
                 />
                 <h3>Select New Image</h3>
@@ -139,13 +137,13 @@ const EditImages = ({ data, handleCancel }) => {
           </div>
           <div className=" add-photo-btn edit-img-display flex-btn">
             {images?.length < 3 ? (
-              <img
+              <img alt=""
                 src={`${process.env.REACT_APP_BASEURL}${data?.images[2]?.url}`}
                 className="add-photo-btn edit-img"
                 onMouseOver={() => setAcitiveInput(true)}
               />
             ) : (
-              <img
+              <img alt=""
                 src={URL.createObjectURL(images[2])}
                 className="add-photo-btn"
                 onMouseOver={() => setAcitiveInput(true)}
@@ -164,9 +162,8 @@ const EditImages = ({ data, handleCancel }) => {
                   onChange={(e) => handleChange(e, 2)}
                   multiple={true}
                 />
-                <img
+                <img alt=""
                   src="https://www.svgrepo.com/show/158332/photos-selection.svg"
-                  alt="image"
                   className="upload-image-icon"
                 />
                 <h3>Select New Image</h3>

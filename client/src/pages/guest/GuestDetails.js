@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, FormControlLabel, Radio } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { newBooking } from "../../redux/features/actions/guestActions";
+import { useSelector } from "react-redux";
+// import { newBooking } from "../../redux/features/actions/guestActions";
 import {
   isValidEmail,
   isValidName,
@@ -23,7 +23,7 @@ const GuestDetails = () => {
   const [GuestDetails, setGuestDetails] = useState([]);
   const [guestData, setGuestData] = useState(null);
   const [isLoading, setIsLoading] = useState(paymentStarted);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const Navigate = useNavigate();
 
   const requiredDataTemplate = {
@@ -37,7 +37,7 @@ const GuestDetails = () => {
     proof: null,
     verified: false,
   };
-
+console.log(isLoading)
   const handleOpenForm = (dataIndex) => {
     setGuestData(GuestDetails[dataIndex]);
     setIsFromOpen({ open: !isFormOpen?.open, index: dataIndex });
@@ -87,6 +87,12 @@ const GuestDetails = () => {
   // }, [errorArray]);
 
   useEffect(() => {
+    const checkUserData = () => {
+      const anyGuestWithoutDetails = GuestDetails.some(
+        (guest) => !guest.verified
+      );
+      setIsVerifed(!anyGuestWithoutDetails);
+    };
     checkUserData();
   }, [GuestDetails]);
 
@@ -117,12 +123,12 @@ const GuestDetails = () => {
     }
   }, []);
 
-  const checkUserData = () => {
-    const anyGuestWithoutDetails = GuestDetails.some(
-      (guest) => !guest.verified
-    );
-    setIsVerifed(!anyGuestWithoutDetails);
-  };
+  // const checkUserData = () => {
+  //   const anyGuestWithoutDetails = GuestDetails.some(
+  //     (guest) => !guest.verified
+  //   );
+  //   setIsVerifed(!anyGuestWithoutDetails);
+  // };
 
   const hanldecontinue = () => {
     const bookingData = {

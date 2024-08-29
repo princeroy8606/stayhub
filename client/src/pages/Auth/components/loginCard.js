@@ -6,7 +6,7 @@ import assets from "../../../assets/assets";
 import { CircularProgress } from "@mui/material";
 
 const LoginCard = ({ setAuthType }) => {
-  const [userType, setUserType] = useState("guest");
+  // const [userType, setUserType] = useState("guest");
   const [email, setEmail] = useState("princeroy8606@gmail.com");
   const [password, setPassword] = useState("123@Adgjmptw");
   const [forgotPassword, setForgotPassword] = useState(false);
@@ -32,7 +32,7 @@ const LoginCard = ({ setAuthType }) => {
         type: "email",
         message: "Enter your Email",
       });
-    let loginData = { UserType: userType, Email: email, Password: password };
+    let loginData = { UserType: 'guest', Email: email, Password: password };
     dispatch(loginAction(loginData));
     setProcessInitiated(true)
   };
@@ -52,7 +52,7 @@ const LoginCard = ({ setAuthType }) => {
         {forgotPassword ? (
           <ForgotPassword
             handleFunction={() => setForgotPassword(false)}
-            UserType={userType}
+            UserType={"guest"}
           />
         ) : (
           <>
@@ -99,6 +99,7 @@ const LoginCard = ({ setAuthType }) => {
                   style={{ right: "1rem" }}
                 >
                   <img
+                  alt=""
                     style={{
                       width: "100%",
                       height: "100%",

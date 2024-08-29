@@ -15,7 +15,7 @@ const Propertys = () => {
 
   useEffect(() => {
     dispatch(getOwnerHouse(userData?._id));
-  }, [userData]);
+  }, [userData,dispatch]);
 
   const skeletonElements = [];
   for (let i = 0; i < 4; i++) {

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getOwnerHouse,
   newHouse,
-  reset,
+  // reset,
 } from "../../../../redux/features/actions/ownerActions";
 import { useAuth } from "../../../../context/authContext";
 import { resetHouseResponse } from "../../../../redux/features/slices/ownerSlice";
@@ -40,6 +40,8 @@ const AddHouse = ({ handleCancel }) => {
     pincode: null,
     state: null,
   });
+
+  console.log(Error)
 
   const dispatch = useDispatch();
   const { userData } = useAuth();
@@ -134,6 +136,8 @@ const AddHouse = ({ handleCancel }) => {
             setRentAmount={(amt) => setRentPerDay(amt)}
           />
         );
+      default :
+      console.log("Unknown") 
     }
   };
 

@@ -12,7 +12,8 @@ const PrivateRoute = () => {
   const dispatch = useDispatch();
   // const userData = {userType:"guest"}
   useEffect(() => {
-    if (userData) {
+    console.log('looping dispatch')
+    if (userData?._id) {
       const token = RequestPermission();
       token
         .then((currentToken) => {
@@ -28,12 +29,14 @@ const PrivateRoute = () => {
           console.log("Error occured,", err);
         });
     }
-  }, []);
+  }, [dispatch,userData._id,userData?.userType]);
+
+  console.log(userType)
   
   useEffect(() => {
-    console.log(userData)
-    if (userData) setUserType(userData?.userType);
-  }, [userData]);
+    // console.log(userData)
+    if (userData?.userType) setUserType(userData?.userType);
+  }, [userData?.userType]);
 
   return userData?.userType === "guest" ? <GuestRoutes /> : <OwnerRoutes />;
 };

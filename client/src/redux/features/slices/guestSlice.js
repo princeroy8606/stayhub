@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   WishList,
   bookingHistory,
-  cancelBookedHouse,
+  // cancelBookedHouse,
   checkHome,
-  checkRoom,
-  filterdRooms,
+  // checkRoom,
+  // filterdRooms,
   filterdhouses,
   newBooking,
 } from "../actions/guestActions";

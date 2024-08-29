@@ -73,7 +73,7 @@ const EditAccomodation = () => {
     if (updatedData?.deleted) {
       Navigate("/propertys");
     }
-  }, [updatedData]);
+  }, [updatedData,dispatch,Navigate,userData?._id]);
 
   return (
     <div className="edit-acco-page">
@@ -110,25 +110,22 @@ const EditAccomodation = () => {
           onMouseOver={() => setShowEdit(true)}
           onMouseLeave={() => setShowEdit(false)}
         >
-          <img
+          <img alt=""
             src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
-            alt={houseData?.images[0]?.filename}
             className="edit-acco-img top-img"
           />
-          <img
+          <img alt=""
             src={`${process.env.REACT_APP_BASEURL}${houseData?.images[1]?.url}`}
-            alt={houseData?.images[0]?.filename}
             className="edit-acco-img"
           />
-          <img
+          <img alt=""
             src={`${process.env.REACT_APP_BASEURL}${houseData?.images[2]?.url}`}
-            alt={houseData?.images[0]?.filename}
             className="edit-acco-img"
           />
           {showEdit && (
             <div className="acc-edit-btn-cnt">
               <div className="acc-edit-btn" onClick={() => setEditImage(true)}>
-                <img
+                <img alt=""
                   src="https://cdn-icons-png.flaticon.com/128/10426/10426353.png"
                   className="acc-edit-amenitie-img"
                 />
@@ -180,7 +177,7 @@ const EditAccomodation = () => {
             <h3 className="dashboard-head-text" style={{ fontSize: "25px" }}>
               capacity
             </h3>
-            <img
+            <img alt=""
               src="https://cdn-icons-png.flaticon.com/128/10426/10426353.png"
               className="acc-edit-capacity-img"
               onClick={() => setEditCapacity(true)}
@@ -213,7 +210,7 @@ const EditAccomodation = () => {
               {houseData?.aminities?.map((amenitie, index) =>
                 amenitie?.available ? (
                   <div className="acc-edit-amenitie" key={index}>
-                    <img
+                    <img alt=""
                       src={amenitie?.icon}
                       className="acc-edit-amenitie-img"
                     />
@@ -229,7 +226,7 @@ const EditAccomodation = () => {
             <h3 className="dashboard-head-text" style={{ fontSize: "25px" }}>
               Address / Location{" "}
             </h3>
-            <img
+            <img alt=""
               src="https://cdn-icons-png.flaticon.com/128/10426/10426353.png"
               className="acc-edit-capacity-img"
               onClick={() => setEditAddress(true)}
@@ -272,7 +269,7 @@ const EditAccomodation = () => {
             <h3 className="dashboard-head-text" style={{ fontSize: "20px" }}>
               Price per Night
             </h3>
-            <img
+            <img alt=""
               src="https://cdn-icons-png.flaticon.com/128/10426/10426353.png"
               className="acc-edit-capacity-img"
               onClick={() => setEditPrice(true)}

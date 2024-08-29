@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import GuestPreview from "../../components/guest/bookings/GuestPreview";
 import { useDispatch } from "react-redux";
@@ -42,14 +42,14 @@ const PayMent = () => {
   return (
     <div className="landing-cont booked-details-cnt">
       <div className="booked-details-bg-image-cnt">
-        <img
+        <img alt="img"
           className="booked-details-bg-image"
           src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
         />
       </div>
       <div className="booked-house-details-cnt">
         <div className="booked-house-img-cnt gird-cnt">
-          {/* <img
+          {/* <img alt="img"
             src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
             alt="house"
             className="grid-top-img"
@@ -94,7 +94,7 @@ const PayMent = () => {
             <GuestPreview data={guest} />
           ))}
          {
-          bookingData?.gusetDetails?.length < 1 &&  <img style={{width:"90%",height:"90%",objectFit:"cover",borderRadius:"1rem"}}  src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}/>
+          bookingData?.gusetDetails?.length < 1 &&  <img alt="img" style={{width:"90%",height:"90%",objectFit:"cover",borderRadius:"1rem"}}  src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}/>
          }
         </div>
       </div>

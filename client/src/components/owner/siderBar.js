@@ -21,6 +21,7 @@ const SiderBar = () => {
     <div className="sidebar-cnt">
       <div className="siderbar-title">
         <img
+        alt=""
           src={assets.Images.logo_Black}
           style={{ width: "80%", height: "70%", objectFit: "contain" }}
         />

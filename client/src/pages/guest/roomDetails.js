@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import assets from "../../assets/assets";
+// import assets from "../../assets/assets";
 import { useLocation } from "react-router-dom";
 import RentDetails from "../../components/guest/bookings/rentDetails";
-import { useAuth } from "../../context/authContext";
+// import { useAuth } from "../../context/authContext";
 import VerticalNavBar from "../../components/guest/verticalNavBar";
 import Footer from "../../components/global/Footer";
 
 const RoomDetails = () => {
-  const { userData } = useAuth();
+  // const { userData } = useAuth();
   const recevedData = useLocation()?.state?.data;
   console.log(recevedData);
   const houseData = recevedData?.houseData;
@@ -52,7 +52,7 @@ const RoomDetails = () => {
     } else {
       setReviews(houseData?.reviews);
     }
-  }, [isFilterActive]);
+  }, [isFilterActive, FilterTopRated,houseData?.reviews]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,15 +69,15 @@ const RoomDetails = () => {
             <div className="room-details-cnt">
               <div className="room-details">
                 <div className="room-img-cnt">
-                  <img
+                  <img alt="img"
                     src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
                     className="room-img-right"
                   />
-                  <img
+                  <img alt="img"
                     src={`${process.env.REACT_APP_BASEURL}${houseData?.images[1]?.url}`}
                     className="room-img"
                   />
-                  <img
+                  <img alt="img"
                     src={`${process.env.REACT_APP_BASEURL}${houseData?.images[2]?.url}`}
                     className="room-img"
                     // style={{borderRadius:"1rem 0 1rem 0"}}
@@ -139,7 +139,7 @@ const RoomDetails = () => {
                   {houseData?.aminities?.map((amenitie, index) =>
                     amenitie.available ? (
                       <div className="amenitie-detail" key={index}>
-                        <img src={amenitie?.icon} className="aneminite-img" />
+                        <img alt="img" src={amenitie?.icon} className="aneminite-img" />
                         <div className="anenitie-name">
                           {amenitie?.amenitie}
                         </div>

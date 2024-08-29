@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 const UploadImage = ({ images, addImages }) => {
   const inputRef = useRef();
@@ -20,7 +20,7 @@ const UploadImage = ({ images, addImages }) => {
       <h3>Add some photos of the house</h3>
       <p>You'll need 3 photos to get started</p>
       {images?.length !== 0 ? (
-        <img src={URL.createObjectURL(images[0])} className="add-photo-btn" />
+        <img alt="" src={URL.createObjectURL(images[0])} className="add-photo-btn" />
       ) : (
         <div className="add-photo-btn" onClick={openFileUploader}>
           <input
@@ -32,7 +32,7 @@ const UploadImage = ({ images, addImages }) => {
           />
           <img
             src="https://www.svgrepo.com/show/158332/photos-selection.svg"
-            alt="image"
+            alt=""
             className="upload-image-icon"
           />
           <p>Select minimum 3 photos</p>
@@ -43,6 +43,7 @@ const UploadImage = ({ images, addImages }) => {
         <div className="display-images-cnt">
           {images?.length > 1 && (
             <img
+            alt=""
               src={URL.createObjectURL(images[1])}
               className="add-photo-btn flex-btn"
             />
@@ -63,6 +64,7 @@ const UploadImage = ({ images, addImages }) => {
             </div>
           ) : (
             <img
+            alt=""
               src={URL.createObjectURL(images[2])}
               className="add-photo-btn flex-btn"
             />

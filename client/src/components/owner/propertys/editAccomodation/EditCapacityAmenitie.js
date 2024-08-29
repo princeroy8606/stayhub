@@ -103,7 +103,7 @@ const EditCapacityAmenitie = ({ data, handleCancel, houseId }) => {
                 style={{ border: item?.available ? "2px solid black" : null }}
                 key={index}
               >
-                <img src={item?.icon} className="acc-amenities-svg" />
+                <img alt="" src={item?.icon} className="acc-amenities-svg" />
                 <div>{item?.amenitie}</div>
               </div>
             ))}

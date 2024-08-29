@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getToken, getMessaging, onMessage } from "firebase/messaging";
+// import { getAnalytics } from "firebase/analytics";
+import { getToken, getMessaging } from "firebase/messaging";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDM_TiYybQphKpeSgZUkuVHyIucYtsT3t4",
@@ -17,7 +17,7 @@ const messaging = getMessaging(app);
 
 export const RequestPermission = () => {
   return Notification.requestPermission().then((Permission) => {
-    if (Permission == "granted") {
+    if (Permission === "granted") {
       console.log("permission granted by the user ");
       return getToken(messaging, {
         validKey:

@@ -1,5 +1,5 @@
 import { Skeleton } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   AllUsers,
@@ -13,15 +13,15 @@ const UsersDetails = () => {
   const UserList = useSelector((state) => state?.ownerReducer?.usersList);
 
   const dispatch = useDispatch();
-  const handleDispatch = () => {
-    if (!UserList) {
-      return dispatch(AllUsers(userData?._id));
-    }
-    console.log(UserList);
-  };
   useEffect(() => {
+    const handleDispatch = () => {
+      if (!UserList) {
+        return dispatch(AllUsers(userData?._id));
+      }
+      console.log(UserList);
+    };
     handleDispatch();
-  }, [UserList]);
+  }, [UserList,userData?._id,dispatch]);
 
   const skeletonElements = [];
   for (let i = 0; i < 7; i++) {
@@ -90,6 +90,7 @@ const UsersDetails = () => {
                   {user?.gender}
                 </div>
                 <img
+                alt=""
                   className="employe-row-value small-value"
                   src={assets.Images.delete_Icon}
                   onClick={() => handleDeleteGuest(user?._id)}

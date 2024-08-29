@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Footer from "../../components/global/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuth } from "../../context/authContext";
@@ -18,7 +18,7 @@ const GuestHome = () => {
   useEffect(() => {
     if (!houseList) dispatch(filterdhouses({ GuestId: userData?._id }));
     window.scrollTo(0, 0);
-  }, []);
+  }, [dispatch,houseList,userData?._id]);
 
   return (
     <div className="landing-cont guest-home-bg">

@@ -41,7 +41,7 @@ const AboutUs = () => {
       <Preloader value={"100"} img={"#img-2"} />
       <VerticalNavBar />
       <div className="about-us-img">
-        <img
+        <img alt="img"
           src={assets.Images.about_us_bg}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
@@ -74,7 +74,7 @@ const AboutUs = () => {
       </div>
       <div className="about-us-mid">
         <div style={{width:"82%", height:"90%", display:"flex", justifyContent:"space-between" , alignItems:"center"}}>
-        <img src={assets.Images.our_story} className="members-portrait-img" style={{width:"50%"}} />
+        <img alt="img" src={assets.Images.our_story} className="members-portrait-img" style={{width:"50%"}} />
         <div className="about-us-legacy">
           <h1
             className="about-us-mainText"
@@ -124,7 +124,7 @@ const AboutUs = () => {
           </p>
           <div className="members-img-cnt">
             <CustomCursor position={cursorPosition} show={showCursor} />
-            <img
+            <img alt="img"
               src={assets.Images.potrate_1}
               className="members-portrait-img"
               style={checkActiveStatus(1)}
@@ -132,7 +132,7 @@ const AboutUs = () => {
               onMouseMove={(e) => handleMouseMove(e)}
               onMouseLeave={() => setShowCursor({ show: false })}
             />
-            <img
+            <img alt="img"
               src={assets.Images.potrate_2}
               className="members-portrait-img"
               style={checkActiveStatus(2)}
@@ -142,7 +142,7 @@ const AboutUs = () => {
               onMouseMove={(e) => handleMouseMove(e)}
               onMouseLeave={() => setShowCursor({ show: false })}
             />
-            <img
+            <img alt="img"
               src={assets.Images.potrate_6}
               className="members-portrait-img"
               style={checkActiveStatus(3)}
@@ -152,7 +152,7 @@ const AboutUs = () => {
               onMouseMove={(e) => handleMouseMove(e)}
               onMouseLeave={() => setShowCursor({ show: false })}
             />
-            <img
+            <img alt="img"
               src={assets.Images.potrate_4}
               className="members-portrait-img"
               style={checkActiveStatus(4)}
@@ -162,7 +162,7 @@ const AboutUs = () => {
               onMouseMove={(e) => handleMouseMove(e)}
               onMouseLeave={() => setShowCursor({ show: false })}
             />
-            <img
+            <img alt="img"
               src={assets.Images.potrate_7}
               className="members-portrait-img"
               style={checkActiveStatus(5)}

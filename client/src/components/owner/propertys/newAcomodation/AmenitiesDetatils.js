@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AccRoomsCount from "./AccRoomsCount";
 
 const AmenitiesDetatils = ({
@@ -66,7 +66,7 @@ const AmenitiesDetatils = ({
               onClick={() => chnageAvailability(item?.amenitie)}
               style={{ border: item?.available ? "2px solid black" : null }}
             >
-              <img src={item?.icon} className="acc-amenities-svg" />
+              <img alt="" src={item?.icon} className="acc-amenities-svg" />
               <div>{item?.amenitie}</div>
             </div>
           ))}

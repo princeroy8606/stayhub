@@ -1,5 +1,5 @@
 import { Skeleton } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuth } from "../../../context/authContext";
 import { AllManagers } from "../../../redux/features/actions/ownerActions";
@@ -9,15 +9,15 @@ const ManagersDetails = () => {
   const ManagerList = useSelector((state) => state?.ownerReducer?.managersList);
 
   const dispatch = useDispatch();
-  const handleDispatch = () => {
-    if (!ManagerList) {
-      return dispatch(AllManagers(userData?._id));
-    }
-    console.log(ManagerList);
-  };
   useEffect(() => {
+    const handleDispatch = () => {
+      if (!ManagerList) {
+        return dispatch(AllManagers(userData?._id));
+      }
+      console.log(ManagerList);
+    };
     handleDispatch();
-  }, [ManagerList]);
+  }, [ManagerList,userData?._id,dispatch]);
 
   const skeletonElements = [];
   for (let i = 0; i < 7; i++) {

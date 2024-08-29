@@ -83,7 +83,7 @@ const RegisterCard = ({ setAuthType }) => {
       }
     };
     citysData();
-  }, [userData.state, allStates]);
+  }, [userData.state, allStates,userData.country]);
 
   const checkError = (field, condition, data) => {
     const updateErrorArray = [];
@@ -640,6 +640,7 @@ const RegisterCard = ({ setAuthType }) => {
               style={{ left: "35%" }}
             >
               <img
+              alt=""
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
                 src={
                   !showPassword

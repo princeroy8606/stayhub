@@ -13,7 +13,7 @@ const EmployeeHome = () => {
   useEffect(() => {
     console.log("triggered");
     dispatch(getDashboardData(userData?._id));
-  }, []);
+  }, [dispatch,userData]);
 
   return (
     <div className="owner-cont">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../global.css";
-import assets from "../../assets/assets";
+// import assets from "../../assets/assets";
 import RegisterCard from "./components/registerCard";
 import LoginCard from "./components/loginCard";
 import { useAuth } from "../../context/authContext";
@@ -17,7 +17,7 @@ const LandingPage = () => {
   useEffect(() => {
     console.log(userData);
     userData && Navigate("/");
-  }, [userData]);
+  }, [userData,Navigate]);
 
   return (
     <div className="landing-cont">
@@ -42,6 +42,7 @@ const LandingPage = () => {
         >
           <div className="landing-img-top">
             <img
+            alt=""
               src="http://localhost:3000/static/media/landing.d6b37785edbe1888547b.jpg"
               className="login-img"
             />
