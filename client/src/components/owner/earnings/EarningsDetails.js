@@ -13,7 +13,7 @@ const EarningsDetails = () => {
   useEffect(() => {
     console.log(data);
     if (!data) dispatch(EarningsData(userData?._id));
-  }, [data]);
+  }, [data,userData?._id,dispatch]);
 
   const dateFormater = (timestamp) => {
     const dateObject = new Date(timestamp * 1000);
@@ -35,7 +35,7 @@ const EarningsDetails = () => {
         <div className="revenue-cnt">
           <div className="total-earning">Total Earnings</div>
           <div className="amount">
-            <img src={assets.Images.dollar} className="amount-img" />
+            <img alt="" src={assets.Images.dollar} className="amount-img" />
             <AnimatedNumber
               includeComma
               animateToNumber={data?.balance || 0}
@@ -51,7 +51,7 @@ const EarningsDetails = () => {
         <div className="revenue-cnt" style={{ backgroundColor: "#A6ABFF" }}>
           <div className="total-earning">Last Months Earnings</div>
           <div className="amount">
-            <img src={assets.Images.dollar} className="amount-img" />
+            <img alt="" src={assets.Images.dollar} className="amount-img" />
             <AnimatedNumber
               includeComma
               animateToNumber={data?.lastMonthEarnings || 0}

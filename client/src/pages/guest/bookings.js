@@ -35,7 +35,7 @@ const Bookings = () => {
     const today = new Date();
     return new Date(toDate) > new Date(today);
   };
-
+  
   useEffect(() => {
     const handleClick = (event) => {
       if (popUpRef.current && event?.target === popUpRef.current) {

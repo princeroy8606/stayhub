@@ -53,6 +53,6 @@ const Images = {
   delete_Icon: require("../assets/Images/delete.png"),
 };
 
-const Font = {};
-
-export default { Images, Font };
+// const Font = {};
+const obj = { Images }
+export default obj;

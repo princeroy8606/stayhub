@@ -15,7 +15,7 @@ const BookingsDetails = () => {
 
   useEffect(() => {
     dispatch(getBookings(userData?._id));
-  }, []);
+  }, [dispatch,userData?._id]);
 
   const togglePopUp = (data) => {
     setPopUp(true);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Button, FormControlLabel, Radio } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -26,7 +26,8 @@ const GuestDetails = () => {
   // const dispatch = useDispatch();
   const Navigate = useNavigate();
 
-  const requiredDataTemplate = {
+
+  const requiredDataTemplate = useMemo(() => ({
     name: "Prince",
     email: "princeroy8606@gmail.com",
     pincode: 673579,
@@ -36,7 +37,8 @@ const GuestDetails = () => {
     age: 12,
     proof: null,
     verified: false,
-  };
+  }), []);
+
 console.log(isLoading)
   const handleOpenForm = (dataIndex) => {
     setGuestData(GuestDetails[dataIndex]);
@@ -101,17 +103,17 @@ console.log(isLoading)
   }, [paymentStarted]);
 
   useEffect(() => {
-    if (!isuserIncluded) {
-      setGuestDetails((prev) => [...prev, requiredDataTemplate]);
-    } else if (
-      GuestDetails.length > data?.GuestCount - 1 ||
-      GuestDetails.length === 1
-    ) {
-      const updatedGuestDetails = [...GuestDetails];
-      updatedGuestDetails.pop();
-      setGuestDetails(updatedGuestDetails);
-    }
-  }, [isuserIncluded]);
+    const adjustGuestDetails = () => {
+      if (!isuserIncluded) {
+        setGuestDetails((prev) => [...prev, requiredDataTemplate]);
+      } else if (GuestDetails.length > (data?.GuestCount || 0) - 1 || GuestDetails.length === 1) {
+        setGuestDetails((prev) => prev.slice(0, -1));
+      }
+    };
+  
+    adjustGuestDetails();
+  }, [isuserIncluded, data?.GuestCount, GuestDetails,requiredDataTemplate]);
+  
 
   useEffect(() => {
     let arrayofGuest = [];
@@ -121,7 +123,7 @@ console.log(isLoading)
       }
       setGuestDetails(arrayofGuest);
     }
-  }, []);
+  }, [data?.GuestCount,requiredDataTemplate]);
 
   // const checkUserData = () => {
   //   const anyGuestWithoutDetails = GuestDetails.some(
