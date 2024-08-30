@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const MarqueeCard = ({ houseData }) => {
   const Navigate = useNavigate();
   const Data = { houseData };
+
   return (
     <div
       className="marquee-card"
@@ -13,7 +14,7 @@ const MarqueeCard = ({ houseData }) => {
         <img
           src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
           className="house-img"
-          alt={`House image`}
+          alt="House"
         />
         <div className="marquee-card-overlay">
           <div className="transition-cnt">

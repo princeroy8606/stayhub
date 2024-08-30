@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import assets from "../../../assets/assets";
+// import assets from "../../../assets/assets";
 import { useDispatch } from "react-redux";
 import { updateWishList } from "../../../redux/features/actions/guestActions";
 import { useAuth } from "../../../context/authContext";
@@ -27,7 +27,7 @@ const RoomCard = ({ houseData, searchData, liked }) => {
           houseName: houseData?.name?.title,
         })
       );
-  }, [isLiked]);
+  }, [isLiked, dispatch, userData?._id, houseData?._id, houseData?.name?.title, liked]);
   return (
     <div
       className="room-card"
@@ -35,6 +35,7 @@ const RoomCard = ({ houseData, searchData, liked }) => {
     >
       <div className="img-cnt">
         <img
+        alt=""
           src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
           className="house-img"
         />

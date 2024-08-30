@@ -48,6 +48,7 @@ const HomePage2 = () => {
         <div className="features-card card-1">
           <div className="features-top-icon">
             <img
+            alt=""
               src={assets.Images.booking_Icon}
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
@@ -66,6 +67,7 @@ const HomePage2 = () => {
         <div className="features-card card-2">
           <div className="features-top-icon">
             <img
+            alt=""
               src={assets.Images.recomendation}
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
@@ -83,6 +85,7 @@ const HomePage2 = () => {
         <div className="features-card card-3">
           <div className="features-top-icon">
             <img
+            alt=""
               src={assets.Images.refund}
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />

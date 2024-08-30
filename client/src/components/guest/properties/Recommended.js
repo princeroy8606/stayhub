@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import RoomCard from "./roomCard";
-import { Navigate } from "react-router-dom";
+// import RoomCard from "./roomCard";
+// import { Navigate } from "react-router-dom";
 import MarqueeCard from "../home/MarqueeCard";
 import { filterdhouses } from "../../../redux/features/actions/guestActions";
 import { useAuth } from "../../../context/authContext";
@@ -16,7 +16,7 @@ const Recommended = () => {
 
   useEffect(()=>{
     dispatch(filterdhouses({ GuestId: userData?._id }))
-  },[])
+  },[dispatch,userData?._id])
 
   return (
     <div className="recommended-section">

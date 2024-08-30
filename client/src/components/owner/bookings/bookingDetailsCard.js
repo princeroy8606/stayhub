@@ -1,28 +1,28 @@
 import React from "react";
 import assets from "../../../assets/assets";
 import { dateCalculator } from "./dateCalculator";
-import { useDispatch } from "react-redux";
-import {
-  cancelBookedHouse,
-  confirmBooking,
-  getBookings,
-} from "../../../redux/features/actions/ownerActions";
-import { useAuth } from "../../../context/authContext";
+// import { useDispatch } from "react-redux";
+// import {
+//   cancelBookedHouse,
+//   confirmBooking,
+//   getBookings,
+// } from "../../../redux/features/actions/ownerActions";
+// import { useAuth } from "../../../context/authContext";
 
 const BookingDetailsCard = ({ handleCancel, bookingData }) => {
-  const dispatch = useDispatch();
-  const { userData } = useAuth();
-  const CancelBooking = () => {
-    dispatch(cancelBookedHouse(bookingData?._id));
-    dispatch(getBookings(userData?._id));
-    handleCancel();
-  };
+  // const dispatch = useDispatch();
+  // const { userData } = useAuth();
+  // const CancelBooking = () => {
+  //   dispatch(cancelBookedHouse(bookingData?._id));
+  //   dispatch(getBookings(userData?._id));
+  //   handleCancel();
+  // };
 
-  const handleConfirm = () => {
-    dispatch(confirmBooking({ Id: bookingData?._id, AdminId: userData?._id }));
-    dispatch(getBookings(userData?._id));
-    handleCancel();
-  };
+  // const handleConfirm = () => {
+  //   dispatch(confirmBooking({ Id: bookingData?._id, AdminId: userData?._id }));
+  //   dispatch(getBookings(userData?._id));
+  //   handleCancel();
+  // };
 
   return (
     <div className="popUp-room-edit">

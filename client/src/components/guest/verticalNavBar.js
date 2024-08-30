@@ -21,6 +21,7 @@ const VerticalNavBar = ({ theme, img }) => {
       <div className="nav-cover">
         <div>
           <img
+          alt=""
             src={
               img === "black"
                 ? assets.Images.logo_Black
@@ -46,7 +47,6 @@ const VerticalNavBar = ({ theme, img }) => {
           >
             Properties
           </div>
-
           <div
             className="nav-cneter-item"
             onClick={() => Navigation("/about-us")}

@@ -31,6 +31,7 @@ const DetailsPopUp = ({ bookingData }) => {
     return new Date(toDate).getTime() > today;
   };
 
+
   const submitReview = () => {
     if (review && raiting)
       dispatch(

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
 import assets from "../../../assets/assets";
 import { useAuth } from "../../../context/authContext";
 import EarningsBarChart from "./BarChart";
-import { useDispatch, useSelector } from "react-redux";
-import { getDashboardData } from "../../../redux/features/actions/ownerActions";
+import {useSelector } from "react-redux";
+// import { getDashboardData } from "../../../redux/features/actions/ownerActions";
 import { Skeleton } from "@mui/material";
 import BookingsLineChart from "./LineChart";
 
@@ -102,7 +102,7 @@ const Dashboard = () => {
           <div className="status-image-cnt">
             <img
               className="status-image"
-              alt="image"
+              alt=""
               src={assets.Images.dashboard_img}
             />
           </div>

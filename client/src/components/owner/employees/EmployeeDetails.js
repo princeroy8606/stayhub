@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import EditRoom from "./newEmployee";
+// import EditRoom from "./newEmployee";
 import NewEmployee from "./newEmployee";
 import { useDispatch, useSelector } from "react-redux";
 import { Employees } from "../../../redux/features/actions/ownerActions";
@@ -17,14 +17,14 @@ const EmployeeDetails = () => {
   );
 
   const dispatch = useDispatch();
-  const handleDispatch = () => {
-    if (!EmployeeList) {
-      return dispatch(Employees(userData?._id));
-    }
-  };
   useEffect(() => {
+    const handleDispatch = () => {
+      if (!EmployeeList) {
+        return dispatch(Employees(userData?._id));
+      }
+    };
     handleDispatch();
-  }, [EmployeeList]);
+  }, [EmployeeList,dispatch,userData?._id]);
 
   const toggleEdit = (data) => {
     setEditEmployee(true);

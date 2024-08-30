@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const AmountScaleSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);

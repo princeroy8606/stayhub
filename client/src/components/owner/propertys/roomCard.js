@@ -11,7 +11,7 @@ import EditRoom from "./editRoom";
 
 const RoomCard = ({ data }) => {
   const dispatch = useDispatch();
-  const Navigate = useNavigate();
+  // const Navigate = useNavigate();
   const [Edit, setEdit] = useState(false);
 
   const { userData } = useAuth();

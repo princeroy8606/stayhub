@@ -9,6 +9,7 @@ const ManagersDetails = () => {
   const ManagerList = useSelector((state) => state?.ownerReducer?.managersList);
 
   const dispatch = useDispatch();
+  
   useEffect(() => {
     const handleDispatch = () => {
       if (!ManagerList) {

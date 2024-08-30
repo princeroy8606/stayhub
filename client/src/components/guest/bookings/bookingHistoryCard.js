@@ -1,9 +1,9 @@
 import React from "react";
-import assets from "../../../assets/assets";
-import { useNavigate } from "react-router-dom";
+// import assets from "../../../assets/assets";
+// import { useNavigate } from "react-router-dom";
 
 const BookingHistoryCard = ({ data, handleFun }) => {
-  const Navigate = useNavigate();
+  // const Navigate = useNavigate();
   const HouseData = data?.houseData;
 
   const getDate = (date) => {
@@ -16,6 +16,7 @@ const BookingHistoryCard = ({ data, handleFun }) => {
   return (
     <div className="bookings-card" onClick={() => handleFun()}>
       <img
+      alt=""
         src={`${process.env.REACT_APP_BASEURL}${HouseData?.images[0]?.url}`}
         className="bookings-img"
       />

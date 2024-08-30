@@ -28,19 +28,19 @@ const Footer = () => {
             <p style={{ fontSize: "1.5rem", fontWeight: "300" }}>
               Follow us on
             </p>
-            <a href="#" className="social-icon">
+            <a href="link.com" className="social-icon">
               <i className="fab fa-facebook">
-                <img src={assets.Images.facebook} className="social-icon-img" />
+                <img alt="" src={assets.Images.facebook} className="social-icon-img" />
               </i>
             </a>
-            <a href="#" className="social-icon">
+            <a href="link.com" className="social-icon">
               <i className="fab fa-twitter">
-                <img src={assets.Images.twitter} className="social-icon-img" />
+                <img alt="" src={assets.Images.twitter} className="social-icon-img" />
               </i>
             </a>
-            <a href="#" className="social-icon">
+            <a href="link.com" className="social-icon">
               <i className="fab fa-instagram">
-                <img
+                <img alt=""
                   src={assets.Images.instagram}
                   className="social-icon-img"
                 />

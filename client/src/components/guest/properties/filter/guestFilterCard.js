@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AmountScaleSlider from "./amountScaleSlider";
 
 const GuestFilterCard = ({ sendData, appliedFilters, opacity }) => {
-  const numbersArray = [0, 1, 2, 3, 4, 5, 6];
+  // const numbersArray = [0, 1, 2, 3, 4, 5, 6];
   const [roomAndBedsCount, setRoomAndBedsCount] = useState({
     bedrooms: appliedFilters?.roomAndBedsCount?.bedrooms || 0,
     bathrooms: appliedFilters?.roomAndBedsCount?.bathrooms || 0,
@@ -20,13 +20,13 @@ const GuestFilterCard = ({ sendData, appliedFilters, opacity }) => {
     priceRange.max = max;
   };
 
-  const manageColor = (number, element) => {
-    return {
-      backgroundColor:
-        roomAndBedsCount[element] === number ? "black" : "transparent",
-      color: roomAndBedsCount[element] === number ? "white" : "black",
-    };
-  };
+  // const manageColor = (number, element) => {
+  //   return {
+  //     backgroundColor:
+  //       roomAndBedsCount[element] === number ? "black" : "transparent",
+  //     color: roomAndBedsCount[element] === number ? "white" : "black",
+  //   };
+  // };
 
   const handleUpdateAminities = (type) => {
     let existingArray = aminities;

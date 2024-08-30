@@ -34,20 +34,20 @@ const EditEmploye = ({ employeDetails, handleCancel }) => {
     }));
   };
 
-  const checkEdit = () => {
-    if (
-      employeData?.Name !== employeDetails?.name ||
-      employeData?.Email !== employeDetails?.email ||
-      employeData?.Phone !== employeDetails?.phone ||
-      employeData?.Role !== employeDetails?.role
-    )
-      return setsubmitBtn(true);
-    setsubmitBtn(false);
-  };
-
+  
   useEffect(() => {
+    const checkEdit = () => {
+      if (
+        employeData?.Name !== employeDetails?.name ||
+        employeData?.Email !== employeDetails?.email ||
+        employeData?.Phone !== employeDetails?.phone ||
+        employeData?.Role !== employeDetails?.role
+      )
+        return setsubmitBtn(true);
+      setsubmitBtn(false);
+    };
     checkEdit();
-  }, [employeData]);
+  }, [employeData,employeDetails]);
 
   const handleSubmit = () => {
     dispatch(updateEmploye(employeData));

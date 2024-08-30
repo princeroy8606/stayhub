@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../../context/authContext";
-import { usePopupWithTimeout } from "../../../hooks/customHook";
+// import { usePopupWithTimeout } from "../../../hooks/customHook";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
-import { newBooking } from "../../../redux/features/actions/guestActions";
+// import { newBooking } from "../../../redux/features/actions/guestActions";
 import GuestTypesCard from "../properties/guestTypesCard";
 
 const RentDetails = ({ RentData }) => {
   const { userData } = useAuth();
   const Navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [isGuestCardOpen, setIsGuestCardOpen] = useState(false);
-  const [totalAmount, setTotalAmout] = useState(null);
-  const [popUp, setPopUp] = useState(false);
+  // const [totalAmount, setTotalAmout] = useState(null);
+  // const [popUp, setPopUp] = useState(false);
   const [Error, setError] = useState("");
   const [dateValues, setDateValues] = useState({
     from: null,
@@ -35,7 +35,7 @@ const RentDetails = ({ RentData }) => {
         to: dayjs(RentData?.data?.toDate),
       });
     }
-  }, []);
+  }, [RentData]);
 
   const minday = dateValues?.from?.add(1, "day");
   const handleFromDate = (pickedDate) => {
@@ -140,11 +140,11 @@ const RentDetails = ({ RentData }) => {
           </span>
         </div>
       </div>
-      {popUp && (
+      {/* {popUp && (
         <div className="Pop-Up-cnt">
           <h6>Room Booked successfully</h6>
         </div>
-      )}
+      )} */}
       <div className="rent-details">
         <div className="dates-cnt">
           <div className="filter-item booking-card-filter-item">

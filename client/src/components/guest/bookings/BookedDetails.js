@@ -52,7 +52,7 @@ const BookedDetails = () => {
   return (
     <div className="landing-cont booked-details-cnt">
       <div className="booked-details-bg-image-cnt">
-        <img
+        <img alt=""
           className="booked-details-bg-image"
           src={`${process.env.REACT_APP_BASEURL}${HouseData?.images[0]?.url}`}
         />

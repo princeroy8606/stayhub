@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 const UploadImage = ({ images, addImages }) => {
   const inputRef = useRef();
   const secondRef = useRef();
-
+  
   const openFileUploader = () => {
     inputRef.current.click();
   };

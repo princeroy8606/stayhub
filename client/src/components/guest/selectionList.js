@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 const SelectionList = ({ data, onSelect, deafultValue }) => {
   return (
     <select onChange={onSelect} className="selection-list">
       <option value="select">{deafultValue}</option>
-      {data.map((item) => (
+      {data?.map((item) => (
         <option value={item} key={item}>
           {item}
         </option>

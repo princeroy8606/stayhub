@@ -7,7 +7,7 @@ import { useAuth } from "../../../context/authContext";
 
 const HouseList = () => {
   const { userData } = useAuth();
-  const [day, setDay] = useState(4);
+  // const [day, setDay] = useState(4);
   const [isFilterOpen, setIsFilterOpen] = useState({ open: false, data: null });
   const [isSortOpen, setIsSortOpen] = useState({ open: false, type: null });
   const [isLoading, setIsLoading] = useState(true);
@@ -92,11 +92,11 @@ const HouseList = () => {
     } else {
       baseData = houseList?.data;
     }
-    if (type == "plh")
+    if (type === "plh")
       sortedData = [...baseData].sort((a, b) => a.rentPerDay - b.rentPerDay);
-    if (type == "phl")
+    if (type === "phl")
       sortedData = [...baseData].sort((a, b) => b.rentPerDay - a.rentPerDay);
-    if (type == "rvw")
+    if (type === "rvw")
       sortedData = [...baseData].sort((a, b) => a.rentPerDay - b.rentPerDay);
     setFilterdAccomodations(sortedData);
   };

@@ -62,7 +62,7 @@ const HomePage4 = () => {
           <div className="testimonial-lines line-1">
             <p>We make it easy for </p>
             <div className="testimonial-img-cnt">
-              <img
+              <img alt=""
                 src={assets.Images.potrate_1}
                 className="testimonial-img"
                 onMouseEnter={() => setTestimonial({ line: 1, show: true })}
@@ -101,7 +101,7 @@ const HomePage4 = () => {
           <div className="testimonial-lines line-2">
             <p>and property </p>
             <div className="testimonial-img-cnt">
-              <img
+              <img alt=""
                 src={assets.Images.potrate_3}
                 className="testimonial-img"
                 onMouseEnter={() => setTestimonial({ line: 2, show: true })}
@@ -139,7 +139,7 @@ const HomePage4 = () => {
           <div className="testimonial-lines line-3">
             <p>manage rental</p>
             <div className="testimonial-img-cnt">
-              <img
+              <img alt=""
                 src={assets.Images.potrate_2}
                 className="testimonial-img"
                 onMouseEnter={() => setTestimonial({ line: 3, show: true })}

@@ -60,7 +60,7 @@ const GuestTop = () => {
         to: dayjs(houseList?.searchData?.toDate),
       });
     }
-  }, [houseList]);
+  }, [houseList,dispatch,userData?._id]);
 
   const handleSearch = () => {
     if (!location && dateValues.to.$d.toString() === "Invalid Date") {
@@ -209,6 +209,7 @@ const GuestTop = () => {
             <div className="search-btn" onClick={handleSearch}>
               {isLoading ? (
                 <img
+                alt=""
                   style={{ width: "50%", height: "90%", objectFit: "contain" }}
                   src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-22-68_512.gif"
                 />

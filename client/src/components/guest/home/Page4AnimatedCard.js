@@ -1,6 +1,6 @@
 import React from "react";
 import assets from "../../../assets/assets";
-import gsap from "gsap";
+// import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
 
 const Page4AnimatedCard = ({ houseData }) => {
@@ -8,7 +8,7 @@ const Page4AnimatedCard = ({ houseData }) => {
   let Data = {houseData}
   return (
     <div className="apartment-card-pg4">
-      <img
+      <img alt=""
         src={`${process.env.REACT_APP_BASEURL}${houseData?.images[0]?.url}`}
         style={{
           width: "100%",
@@ -32,7 +32,7 @@ const Page4AnimatedCard = ({ houseData }) => {
           </h4>
           <div className="absolute-data-right-btn" onClick={()=>navigate('/properties/room-details',{ state: { data: Data } })}>
             <p>More</p>
-            <img
+            <img alt=""
               src={assets.Images.up_arrow}
               style={{
                 width: "30%",

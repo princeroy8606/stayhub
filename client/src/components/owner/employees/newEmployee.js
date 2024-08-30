@@ -4,12 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Employees,
   addNewEmployee,
-  editRoom,
-  getOwnerHouse,
 } from "../../../redux/features/actions/ownerActions";
 import { useAuth } from "../../../context/authContext";
 import SelectionList from "../../guest/selectionList";
-import { signUp } from "../../../redux/features/actions/authentication";
+// import { signUp } from "../../../redux/features/actions/authentication";
 import { usePopupWithTimeout } from "../../../hooks/customHook";
 import { resetHouseResponse } from "../../../redux/features/slices/ownerSlice";
 import {
@@ -22,7 +20,7 @@ import {
 const NewEmployee = ({ handleCancel }) => {
   const { userData } = useAuth();
   const dispatch = useDispatch();
-  const [popUp, setPopUP] = useState(false);
+  // const [popUp, setPopUP] = useState(false);
   const [errorArray, setErrorArray] = useState([]);
   const [employeData, setEmployeData] = useState({
     Name: "",
@@ -94,11 +92,11 @@ const NewEmployee = ({ handleCancel }) => {
       <div className="cancel-btn" onClick={() => handleCancel(false)}>
         <img src={assets.Images.Cross} alt="Close" />
       </div>
-      {popUp && (
+      {/* {popUp && (
         <div className="Pop-Up-cnt">
           <h6>Saved successfully</h6>
         </div>
-      )}
+      )} */}
       <div className="block-center-form  block-center-form-edit">
         <h2 style={{ textAlign: "center" }}>New Employee</h2>
         <div className="form-cnt">

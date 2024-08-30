@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import assets from "../../../assets/assets";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -77,13 +77,13 @@ const HomePage3 = () => {
             >
               About Us
             </h3>
-            <img
+            <img alt=""
               src={assets.Images.up_arrow}
               style={{ width: "12%", height: "100%", objectFit: "contain" }}
             />
           </div>
         </div>
-        <img src={assets.Images.bg_homePage3} className="pg3-bg" />
+        <img alt="" src={assets.Images.bg_homePage3} className="pg3-bg" />
       </div>
     </div>
   );
