@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const AuthContext = createContext();
@@ -9,18 +9,11 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const Data = useSelector((state) => state.authReducer?.userData?.userResponse);
-  
+
   const [userData, setUserData] = useState(null);
   const [toggleStorage, setToggleStorage] = useState(false);
 
-  const storeData = () => {
-    try {
-      setToggleStorage(!toggleStorage);
-      localStorage.setItem("userData", JSON.stringify(Data));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
 
   const isLogedIn = () => {
     try {
@@ -40,9 +33,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const storeData = useCallback(() => {
+    try {
+      setToggleStorage(prevToggleStorage => !prevToggleStorage);
+      localStorage.setItem("userData", JSON.stringify(Data));
+    } catch (err) {
+      console.log(err);
+    }
+  }, [Data]);
+
   useEffect(() => {
     if (Data) storeData();
-  }, [Data]);
+  }, [Data, storeData]);
 
   useEffect(() => {
     isLogedIn();
