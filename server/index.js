@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 app.use(
   Cors({
-    origin: "https://stayhub-three.vercel.app/",
+    origin: "https://stayhub-three.vercel.app",
     credentials: true,
   })
 );
