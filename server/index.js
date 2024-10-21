@@ -19,7 +19,6 @@ app.use(cookieParser());
 
 app.use(
   Cors({
-    origin: "http://localhost:3000",
     origin: "https://stayhub-three.vercel.app/",
     credentials: true,
   })
